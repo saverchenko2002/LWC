@@ -1,0 +1,35 @@
+<template>
+  <div class="slds-p-around_medium">
+    <lightning-card title="Wire a property in LWC">
+      <div class="slds-p-around_medium">
+        <template for:each={result} for:item="account">
+          <div class="slds-item" key={account.Id}>
+            <strong>{account.Name} </strong>
+            <lightning-formatted-number
+              value={account.AnnualRevenue}
+              format-style="currency"
+              currency-code="USD"
+              currency-display-as="code"
+            ></lightning-formatted-number>
+          </div>
+        </template>
+        <template if:true={wiredAccount.data}>
+          <strong>wiredAccount {wiredAccount.data.Name}</strong>
+          <!-- <p><strong>{name}</strong></p> -->
+        </template>
+        <lightning-button onclick={consoleLog} variant="brand">Press me</lightning-button>
+      </div>
+    </lightning-card>
+  </div>
+
+  <div class="slds-p-around_medium">
+    <lightning-card title="third card imperative">
+      <lightning-button label="LoadContacts" onclick={handleLoad}></lightning-button>
+      <template if:true={contacts}>
+        <template for:each={contacts} for:item="contact">
+          <p key={contact.Id}>{contact.Name}</p>
+        </template>
+      </template>
+    </lightning-card>
+  </div>
+</template>

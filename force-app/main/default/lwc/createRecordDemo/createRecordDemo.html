@@ -1,0 +1,42 @@
+<template>
+  <lightning-card
+    title="create record using uiRecordApi"
+    icon-name="standard:account"
+  >
+    <div class="slds-m-around-xx-large">
+      <lightning-input
+        label="Enter account name"
+        name="Name"
+        type="text"
+        value={formFields.Name}
+        onchange={changeHandler}
+      ></lightning-input>
+      <lightning-input
+        label="Enter account phone"
+        name="Phone"
+        type="text"
+        value={formFields.Phone}
+        onchange={changeHandler}
+      ></lightning-input>
+      <lightning-input
+        label="Enter account type"
+        name="Type"
+        type="text"
+        value={formFields.Type}
+        onchange={changeHandler}
+      ></lightning-input>
+      <lightning-input
+        label="Enter account industry"
+        name="Industry"
+        type="text"
+        value={formFields.Industry}
+        onchange={changeHandler}
+      ></lightning-input>
+      <lightning-button
+        label="Submit"
+        onclick={handleSave}
+        variant="brand"
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

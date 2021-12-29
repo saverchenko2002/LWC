@@ -1,0 +1,14 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+  <aura:attribute name="input1" type="Integer" required="true" description="For First Input" />
+  <aura:attribute name="input2" type="Integer" required="true" description="For Second Input" />
+  <aura:attribute name="output" type="integer" description="for output" />
+
+  <lightning:input type="number" value="{!v.input1}" label="Please Enter First Value" required="true" />
+  <lightning:input type="number" value="{!v.input2}" label="Please Enter Second Value" required="true" />
+  <h3>The output is - {!v.output}</h3>
+
+  <lightning:button label="Add" variant="brand" onclick="{!c.doAdd}" />
+  <lightning:button label="Subtract" variant="brand" onclick="{!c.doSub}" />
+  <lightning:button label="Divide" variant="brand" onclick="{!c.doDiv}" />
+  <lightning:button label="Multiply" variant="brand" onclick="{!c.doMult}" />
+</aura:component>

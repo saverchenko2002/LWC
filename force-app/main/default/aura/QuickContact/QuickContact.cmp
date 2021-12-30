@@ -7,6 +7,7 @@
   />
   <div class="slds-p-around_small">
     <lightning:input
+      aura:id="contactForm"
       type="text"
       value="{!v.createContact.FirstName}"
       label="FirstName"
@@ -14,6 +15,7 @@
       autocomplete="off"
     />
     <lightning:input
+      aura:id="contactForm"
       type="text"
       value="{!v.createContact.LastName}"
       label="LastName"
@@ -21,6 +23,7 @@
       autocomplete="off"
     />
     <lightning:input
+      aura:id="contactForm"
       type="email"
       value="{!v.createContact.Email}"
       label="Email"
@@ -28,6 +31,7 @@
       autocomplete="off"
     />
     <lightning:input
+      aura:id="contactForm"
       type="text"
       value="{!v.createContact.Phone}"
       label="Phone"

@@ -1,0 +1,4 @@
+<aura:component>
+  <aura:registerEvent name="CompEvent" type="c:CompEvent" />
+  <lightning:button label="Fire Component Event" variant="brand" onclick="{!c.fireEvent}" />
+</aura:component>

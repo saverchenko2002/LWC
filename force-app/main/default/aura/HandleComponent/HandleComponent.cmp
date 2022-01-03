@@ -1,0 +1,4 @@
+<aura:component>
+  <aura:handler name="CompEvent" event="c:CompEvent" action="{!c.handleEvent}" includeFacets="true" />
+  {!v.body}
+</aura:component>

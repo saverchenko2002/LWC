@@ -1,0 +1,138 @@
+<apex:page showHeader="false" applyBodyTag="false" applyHtmlTag="false" sidebar="false" standardStylesheets="false"  renderAs="advanced_pdf">
+    <head>
+        <style>
+            body { 
+                font-family: sans-serif;
+                font-size: 24px;
+                /* background: url('{!$Resource.a4_perfection}');
+                background-repeat: no-repeat; */
+                /*background-origin: border-box;*/ 
+                
+             
+            }
+
+            /* @page {
+                size: letter;
+                margin: 25mm;
+                @top-center {
+                    content: "Sample";
+                }
+                @bottom-center {
+                    content: "Page " counter(page) " of " counter(pages);
+                }
+            }
+            .page-break {
+                display:block;
+                page-break-after:always; 
+            }*/
+
+            @page {  size: 1700px 2800px; margin: 0; padding: 0;}
+            /*17.5in 29in*/
+            /* img {
+                min-height: 100%;
+                min-width: 100%;
+                width: auto;
+                height: auto;
+                max-width: none;
+                max-height: none;
+                display: block;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .container {
+                width: 1700px;
+                height: 2700px;
+            } */
+            /* body {
+                font-family: Arial Unicode MS;
+                background-image: url('{!$Resource.page1_421a}');
+            background-repeat: no-repeat;
+            /* background-position: 100% 50%; 
+            max-width:100%; height:auto;
+            } */
+
+            /* body {
+            background-image: url('{!$Resource.page1_421a}');
+            background-repeat: no-repeat;
+            /* background-position: 100% 50%; 
+            max-width:100%; height:auto;
+
+            background-size: cover;
+            zoom: 0;
+            margin: 0px;
+           
+            }
+
+            @page {
+                width: 1700px;
+            }
+
+            .fill {
+                overflow: hidden;
+                background-size: cover;
+                background-position: center;
+              
+            }
+
+            .image{
+                height: 28000px;
+                background-position:center;
+                background-size: cover;
+                -o-background-size: cover;
+                display: flex;
+                justify-content: center;
+                width: inherit;
+                overflow: hidden;
+            }
+
+            @page {
+                size: portrait;
+            } */
+            /* img {
+                width: 1700px;
+                height: 28000px;
+                object-fit: fill;
+            } */
+            /* .background {
+               width: 1700px;
+               height: 2800px;
+                background-image:url('{!$Resource.page1_421a}');
+                background-size: cover;
+                background-position: center center;
+                background-repeat: no-repeat;
+                text-align:center;
+                margin:auto;
+                padding:0;
+            } */
+            /* @page {
+                
+                size: A2;
+            margin-left: 1cm;
+            margin-right: 1cm;
+            margin-top: 4.5cm;
+            margin-bottom: 1.8cm;
+            } */
+      
+        </style>
+    </head>
+    <body>
+        <!-- <h1 hidden="true" style="position:absolute; top: 28000px">text</h1> -->
+        
+       <!-- <div style="background-image: url('{!$Resource.page1_421a}')" class="fill">
+           <h1 style="position: absolute; top: 3000px;">Hello epta</h1>
+       </div> -->
+         
+        <img src="{!$Resource.template_421AppDoc}" style="top: 0; position: absolute"/>
+        <!-- <apex:image style="img" value="{!$Resource.checkbox_true}"/> -->
+        <p style="position:absolute; top: 675px; left: 710px;">
+             dummy text
+        </p>
+        <img src="{!$Resource.checkbox_true}" style="position:absolute; top: 754px; left: 916px; background: #000;" width="20px"/>
+    <!-- <p style="position:absolute; top: 2680px; left: 705px;">
+        dummy text
+    </p> -->
+    </body>
+</apex:page>
+<!-- {!$Resource.template_421AppDoc} -->

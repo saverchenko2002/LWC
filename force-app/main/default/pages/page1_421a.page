@@ -1,4 +1,4 @@
-<apex:page showHeader="false" applyBodyTag="false" applyHtmlTag="false" sidebar="false" standardStylesheets="false"  renderAs="advanced_pdf">
+<apex:page showHeader="false" applyBodyTag="false" applyHtmlTag="false" sidebar="false" standardStylesheets="false"  renderAs="pdf">
     <head>
         <style>
             body { 
@@ -27,6 +27,12 @@
             }*/
 
             @page {  size: 1700px 2800px; margin: 0; padding: 0;}
+
+            p .text-output{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 40px;
+            }
+            
             /*17.5in 29in*/
             /* img {
                 min-height: 100%;
@@ -126,13 +132,77 @@
          
         <img src="{!$Resource.template_421AppDoc}" style="top: 0; position: absolute"/>
         <!-- <apex:image style="img" value="{!$Resource.checkbox_true}"/> -->
-        <p style="position:absolute; top: 675px; left: 710px;">
-             dummy text
+        <p class="text-output" style="position:absolute; top: 675px; left: 710px;">
+            text info
         </p>
+        <!-- <apex:form>
+            <apex:inputCheckbox style="position:absolute; top: 754px; left: 916px;"/>
+
+        </apex:form> -->
         <img src="{!$Resource.checkbox_true}" style="position:absolute; top: 754px; left: 916px; background: #000;" width="20px"/>
+
+        <img src="{!$Resource.checkbox_true}" style="position:absolute; top: 754px; left: 1046px; background: #000;" width="20px"/>
+
+        <img src="{!$Resource.checkbox_true}" style="position:absolute; top: 798px; left: 787px; background: #000;" width="20px"/>
+
+
     <!-- <p style="position:absolute; top: 2680px; left: 705px;">
         dummy text
     </p> -->
     </body>
 </apex:page>
 <!-- {!$Resource.template_421AppDoc} -->
+
+<!-- public class WorkbookExcel {
+    
+    static string url = 'https://vrgt9ue1bj.execute-api.us-east-1.amazonaws.com/production/';
+    
+
+	@InvocableMethod(label='Generate PDF from VF Page')
+    public static void generate(Paremeters [] parameters ){
+    	Paremeters paremeter = parameters[0];
+   		generate(paremeter.recordId);
+    }
+    
+    @future(callout=true)
+    public static void generate(Id recordId){
+       
+        HttpRequest request = new HttpRequest();
+        request.setEndpoint(url);
+        request.setMethod('POST');
+        
+        Blob responseBLOB;
+        
+        Http http = new Http();
+        HttpResponse response = http.send(request);
+        responseBLOB = response.getBodyAsBlob();
+        
+        
+        ContentVersion conVer = new ContentVersion();
+        conVer.ContentLocation = 'S'; // S specify this document is in SF, use E for external files
+        conVer.PathOnClient = 'workbook.xlsm';
+        conVer.Title = 'Workbook.xlsm';
+        conVer.VersionData = responseBLOB;
+        insert conVer;
+        
+        // First get the content document Id from ContentVersion
+        Id conDoc = [SELECT ContentDocumentId FROM ContentVersion WHERE Id =:conVer.Id].ContentDocumentId;
+        
+        
+        ContentDocumentLink cDe = new ContentDocumentLink();
+        cDe.ContentDocumentId = conDoc;
+        cDe.LinkedEntityId = recordId; // you can use objectId,GroupId etc
+        cDe.ShareType = 'I'; // Inferred permission, checkout description of ContentDocumentLink object for more details
+        cDe.Visibility = 'AllUsers';
+        
+        insert cDe;
+    }
+    
+     public class Paremeters {
+         
+        @InvocableVariable(label='Record ID' required=true)
+        public String recordId;
+     }
+} -->
+
+
